@@ -40,4 +40,9 @@ public class Carrera {
             }
         }
     }
+
+    @Override
+    public String toString(){
+        return "Nombre de la materia: " + nombre + '\n' + "Materias: " + '\n' + materias;
+    }
 }

@@ -67,4 +67,9 @@ public abstract class Persona {
             System.out.println("Opcion invalida");
         }
     }
+
+    @Override
+    public String toString(){
+        return "Nombre: " + nombre + ", Apellido: " + apellido + ", Legajo: " + legajo;
+    }
 }
