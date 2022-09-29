@@ -1,9 +1,12 @@
+
+import java.util.Collections;
 import java.util.LinkedList;
 
-public class Materia {
+public class Materia implements Informacion{
     private String nombre;
     private Profesor titular;
     private LinkedList<Estudiante> coleccionEstudiantes = new LinkedList<>();
+
 
     public String getNombre() {
         return nombre;
@@ -52,4 +55,13 @@ public class Materia {
                 '}';
     }
 
+    @Override
+    public int verCantidad() {
+        return coleccionEstudiantes.size();
+    }
+
+    @Override
+    public String listarContenidos() {
+        return null;
+    }
 }

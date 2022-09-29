@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Carrera {
+public class Carrera implements Informacion {
     private String nombre;
     private LinkedList<Materia> materias;
 
@@ -44,5 +44,15 @@ public class Carrera {
     @Override
     public String toString(){
         return "Nombre de la materia: " + nombre + '\n' + "Materias: " + '\n' + materias;
+    }
+
+    @Override
+    public int verCantidad() {
+        return materias.size();
+    }
+
+    @Override
+    public String listarContenidos() {
+        return null;
     }
 }
