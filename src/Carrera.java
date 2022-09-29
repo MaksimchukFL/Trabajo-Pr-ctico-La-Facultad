@@ -43,7 +43,7 @@ public class Carrera implements Informacion {
 
     @Override
     public String toString(){
-        return "Nombre de la materia: " + nombre + '\n' + "Materias: " + '\n' + materias;
+        return "Nombre de la carrera: " + nombre + '\n' + "Materias: " + '\n' + materias;
     }
 
     @Override
