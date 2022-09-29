@@ -29,6 +29,14 @@ public class Materia implements Informacion{
         this.titular = profesor;
     }
 
+    public LinkedList<Estudiante> getColeccionEstudiantes() {
+        return coleccionEstudiantes;
+    }
+
+    public void setColeccionEstudiantes(LinkedList<Estudiante> coleccionEstudiantes) {
+        this.coleccionEstudiantes = coleccionEstudiantes;
+    }
+
     public void eliminarEstudiante(int legajo)
     {
         for (Estudiante estudiante : coleccionEstudiantes){
