@@ -29,8 +29,8 @@ public class Main {
 
         f1.agregarCarrera(c1);
 
-        f1.listarContenidos();
-        f1.verCantidad();
+        System.out.println(f1.listarContenidos());
+        System.out.println(f1.verCantidad());
 
         f1.eliminarCarrera(c2);
         m1.eliminarEstudiante(e3.getLegajo());
@@ -41,10 +41,10 @@ public class Main {
         m1.modificarTitular(p2);
         p2.calcularSueldo();
 
-        f1.verCantidad();
-        c1.verCantidad();
-        m1.verCantidad();
+        System.out.println(f1.verCantidad());
+        System.out.println(c1.verCantidad());
+        System.out.println(m1.verCantidad());
 
-        f1.listarContenidos();
+        System.out.println(f1.listarContenidos());
     }
 }
