@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Facultad implements Informacion {
@@ -37,11 +38,12 @@ public class Facultad implements Informacion {
     }
     @Override
     public int verCantidad() {
-        return 0;
+        return coleccionCarreras.size();
     }
 
     @Override
     public String listarContenidos() {
-        return null;
+        String listado=coleccionCarreras.toString();
+        return listado;
     }
 }

@@ -70,6 +70,7 @@ public class Materia implements Informacion{
 
     @Override
     public String listarContenidos() {
-        return null;
+        String listado=coleccionEstudiantes.toString();
+        return listado;
     }
 }

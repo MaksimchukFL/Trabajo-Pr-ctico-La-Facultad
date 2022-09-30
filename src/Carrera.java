@@ -84,6 +84,7 @@ public class Carrera implements Informacion {
 
     @Override
     public String listarContenidos() {
-        return null;
+        String listado=materias.toString();
+        return listado;
     }
 }
