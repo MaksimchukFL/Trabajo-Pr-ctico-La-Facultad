@@ -1,4 +1,6 @@
+import java.util.InputMismatchException;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Carrera implements Informacion {
     private String nombre;
@@ -17,6 +19,10 @@ public class Carrera implements Informacion {
         this.nombre = nombre;
     }
 
+    public void setMaterias(LinkedList<Materia> materias) {
+        this.materias = materias;
+    }
+
     public LinkedList<Materia> getMaterias() {
         return materias;
     }
@@ -27,16 +33,41 @@ public class Carrera implements Informacion {
 
     public void eliminarMateria(String nombreMateria){
         for(Materia materia: materias){
-            if(materia.getNombre() == nombreMateria){
+            if(materia.getNombre().equals(nombreMateria)){
                 materias.remove(materia);
             }
         }
     }
 
     public void encontrarMateria(String nombreMateria){
+        Scanner leer = new Scanner(System.in);
+        char opcion;
+
         for(Materia materia: materias){
-            if(materia.getNombre() == nombreMateria){
+            if(materia.getNombre().equals(nombreMateria)){
                 System.out.println("La materia se encuentra en la carrera");
+                System.out.println("¿Desea eliminarla? 's' para eliminar, 'n' para mantener");
+                try{
+                    opcion = leer.next().charAt(0);
+                    while (opcion != 's' && opcion != 'n'){
+                        leer.nextLine();
+                        System.out.println("Opcion invalida, intente nuevamente");
+                        System.out.println("¿Desea eliminarla? 's' para eliminar, 'n' para mantener");
+                        try{
+                            opcion = leer.next().charAt(0);
+                        }catch (InputMismatchException e){
+                            e.printStackTrace();
+                            System.out.println("ERROR en el ingreso de datos");
+                        }
+                    }
+
+                    if(opcion == 's'){
+                        getMaterias().remove(materia);
+                    }
+                }catch (InputMismatchException e){
+                    e.printStackTrace();
+                    System.out.println("ERROR en el ingreso de datos");
+                }
             }
         }
     }

@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public abstract class Persona {
@@ -42,29 +43,53 @@ public abstract class Persona {
 
         System.out.println("¿Que desea modificar?");
         System.out.println("1. Nombre \n2.Apellido \n3.Legajo");
-        opcion = leer.nextInt();
-        leer.nextLine();
+        try{
+            opcion = leer.nextInt();
+            leer.nextLine();
+            if(opcion == 1){
+                System.out.println("Ingrese el nombre para modificar: ");
+                try{
+                    nombre = leer.nextLine();
+                    setNombre(nombre);
+                    System.out.println("Cambio hecho");
+                    System.out.println(getApellido() + ", " + getNombre());
+                }catch (InputMismatchException e){
+                    e.printStackTrace();
+                    System.out.println("ERROR en el ingreso de datos");
+                    System.out.println("Cambios descartados");
+                }
 
-        if(opcion == 1){
-            System.out.println("Ingrese el nombre para modificar: ");
-            nombre = leer.nextLine();
-            setNombre(nombre);
-            System.out.println("Cambio hecho");
-            System.out.println(getApellido() + ", " + getNombre());
-        }else if(opcion == 2){
-            System.out.println("Ingrese el apellido para modificar: ");
-            apellido = leer.nextLine();
-            setApellido(apellido);
-            System.out.println("Cambio hecho");
-            System.out.println(getApellido() + ", " + getNombre());
-        }else if(opcion == 3){
-            System.out.println("Ingrese el legajo para modificar: ");
-            legajo = leer.nextInt();
-            setLegajo(legajo);
-            System.out.println("Cambio hecho");
-            System.out.println(getLegajo());
-        }else{
-            System.out.println("Opcion invalida");
+            }else if(opcion == 2){
+                System.out.println("Ingrese el apellido para modificar: ");
+                try{
+                    apellido = leer.nextLine();
+                    setApellido(apellido);
+                    System.out.println("Cambio hecho");
+                    System.out.println(getApellido() + ", " + getNombre());
+                }catch (InputMismatchException e){
+                    e.printStackTrace();
+                    System.out.println("ERROR en el ingreso de datos");
+                    System.out.println("Cambios descartados");
+                }
+            }else if(opcion == 3){
+                System.out.println("Ingrese el legajo para modificar: ");
+                try{
+                    legajo = leer.nextInt();
+                    setLegajo(legajo);
+                    System.out.println("Cambio hecho");
+                    System.out.println(getLegajo());
+                }catch (InputMismatchException e){
+                    e.printStackTrace();
+                    System.out.println("ERROR en el ingreso de datos");
+                    System.out.println("Cambios descartados");
+                }
+
+            }else{
+                System.out.println("Opcion invalida");
+            }
+        }catch (InputMismatchException e){
+            e.printStackTrace();
+            System.out.println("ERROR en el ingreso de datos");
         }
     }
 
