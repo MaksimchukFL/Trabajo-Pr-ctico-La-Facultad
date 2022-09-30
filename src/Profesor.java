@@ -30,5 +30,11 @@ public class Profesor extends Persona{
         return this.basico+(aumento*this.antiguedad);
     }
 
-
+    @Override
+    public String toString() {
+        return "Profesor{" +
+                "basico=" + basico +
+                ", antiguedad=" + antiguedad +
+                '}';
+    }
 }
