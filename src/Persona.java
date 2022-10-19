@@ -2,9 +2,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public abstract class Persona {
-    private String nombre;
-    private String apellido;
-    private int legajo;
+    public String nombre;
+    public String apellido;
+    public int legajo;
 
     public Persona(String nombre,String apellido,int legajo){
         this.nombre = nombre;
