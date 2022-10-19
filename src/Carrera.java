@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class Carrera implements Informacion {
     private String nombre;
@@ -84,7 +85,10 @@ public class Carrera implements Informacion {
 
     @Override
     public String listarContenidos() {
-        String listado=materias.toString();
-        return listado;
+        TreeSet<String> listaNombresMaterias=new TreeSet<>();
+        for (Materia materia:materias) {
+            listaNombresMaterias.add(materia.getNombre());
+        }
+        return listaNombresMaterias.toString();
     }
 }

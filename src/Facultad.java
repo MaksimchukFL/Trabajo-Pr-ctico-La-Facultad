@@ -1,5 +1,6 @@
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.TreeSet;
 
 public class Facultad implements Informacion {
     private String nombre;
@@ -43,7 +44,10 @@ public class Facultad implements Informacion {
 
     @Override
     public String listarContenidos() {
-        String listado=coleccionCarreras.toString();
-        return listado;
+        TreeSet<String> listaNombresCarreras=new TreeSet<>();
+        for (Carrera carrera:coleccionCarreras) {
+            listaNombresCarreras.add(carrera.getNombre());
+        }
+        return listaNombresCarreras.toString();
     }
 }
