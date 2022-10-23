@@ -1,4 +1,3 @@
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class Facultad implements Informacion {
@@ -14,9 +13,20 @@ public class Facultad implements Informacion {
 
     public void agregarCarrera(Carrera carrera){
         this.coleccionCarreras.add(carrera);
+        for (Carrera c: coleccionCarreras){
+            if(c.getNombre().equals(carrera.getNombre())){
+                System.out.println("Se agregó la carrera " + carrera.getNombre());
+            }
+        }
     }
-    public void eliminarCarrera(Carrera carrera){
-        this.coleccionCarreras.remove(carrera);
+    public void eliminarCarrera(String nombre){
+        for (Carrera carrera:coleccionCarreras
+        ) {
+            if (nombre.equals(carrera.getNombre())){
+                coleccionCarreras.remove(carrera);
+                System.out.println("Se eliminó la carrera  " + nombre );
+            }
+        }
     }
 
     public void eliminarEstudiante(Estudiante estudiante){
@@ -25,6 +35,7 @@ public class Facultad implements Informacion {
                 for(Estudiante estudiantex:materia.getColeccionEstudiantes()){
                     if(estudiantex.equals(estudiante)){
                         materia.getColeccionEstudiantes().remove(estudiante);
+                        System.out.println("Se eliminó el estudiante " + estudiante.getNombre() + " " + estudiante.getApellido());
                     }
                 }
             }
