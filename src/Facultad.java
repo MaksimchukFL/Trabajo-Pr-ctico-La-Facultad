@@ -16,8 +16,14 @@ public class Facultad implements Informacion {
     public void agregarCarrera(Carrera carrera){
         this.coleccionCarreras.add(carrera);
     }
-    public void eliminarCarrera(Carrera carrera){
-        this.coleccionCarreras.remove(carrera);
+    public void eliminarCarrera(String nombre){
+        for (Carrera carrera:coleccionCarreras
+        ) {
+            if (nombre.equals(carrera.getNombre())){
+                coleccionCarreras.remove(carrera);
+                System.out.println("Se eliminó la carrera  " + nombre );
+            }
+        }
     }
 
     public void eliminarEstudiante(Estudiante estudiante){

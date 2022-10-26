@@ -38,11 +38,11 @@ public class Materia implements Informacion{
         this.coleccionEstudiantes = coleccionEstudiantes;
     }
 
-    public void eliminarEstudiante(int legajo)
-    {
-        for (Estudiante estudiante : coleccionEstudiantes){
-            if(estudiante.getLegajo()==legajo){
+    public void eliminarEstudiante(String nombre){
+        for (Estudiante estudiante:coleccionEstudiantes) {
+            if (nombre.equals(estudiante.getNombre())){
                 coleccionEstudiantes.remove(estudiante);
+                System.out.println("Estudiante eliminado.");
             }
         }
     }
